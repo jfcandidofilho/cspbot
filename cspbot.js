@@ -213,15 +213,6 @@
     // Executes cspbot code
     function cspbot(){//"cspbot_votes"
 
-        // Sets the cookie
-        set_cookie_value( 
-
-            "cspbot_votes", 
-            get_cookie_value( "cspbot_votes" ) + 1, 
-            10
-            
-        );
-
         // Creates a vote panel with vote count
         create_panel( styles, "cspbot_votes" );
 
@@ -236,6 +227,15 @@
                 "#" + poll_config.vote_id[ POLL ]
             
             )[0].click();
+
+            // Sets the cookie
+            set_cookie_value( 
+
+                "cspbot_votes", 
+                get_cookie_value( "cspbot_votes" ) + 1, 
+                10
+                
+            );
 
             // Vote 
             document.querySelectorAll(
